@@ -6,7 +6,29 @@ This repository contains the material for the SAP TechEd 2025 session called Ses
 
 ## Overview
 
-This session introduces attendees to...
+### Introduction to Session
+- What is an Agent? Difference to Algorithm, Chain,...
+- Joule Studio Agent Builder
+- A2A high level information => strategy?
+- Scenario description(s): (1), (2), (3)
+- Architecture/Demo
+
+### Hands-on Part
+
+#### 1. Build an Agent
+- How to
+- Trace of Agent's steps
+
+#### 2. Agent x A2A: Add A2A support to Agent
+What benefits does A2A bring?
+What is an Agent Card? Discoverability?
+A2A Client => Call A2A Agent Server
+
+#### 3. Let the Agents collaborate w/ A2A (across borders)!
+- Use Built Agent (Step (1) and (2))
+- re-Deployed Agents (Azure & GCP from Dispute Resolution scenario?)
+- Trace of collaboration (Orchestrator?)
+- Setup via Terraform (optional)
 
 ## Requirements
 
