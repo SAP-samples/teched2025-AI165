@@ -26,7 +26,7 @@ A2A Client => Call A2A Agent Server
 
 #### 3. Let the Agents collaborate w/ A2A (across borders)!
 - Use Built Agent (Step (1) and (2))
-- re-Deployed Agents (Azure & GCP from Dispute Resolution scenario?)
+- Deployed A2A Agents (SAP & IBM)
 - Trace of collaboration (Orchestrator?)
 - Setup via Terraform (optional)
 
