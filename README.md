@@ -20,9 +20,9 @@ This repository contains the material for the SAP TechEd 2025 session called Ses
 - Trace of Agent's steps
 
 #### 2. Agent x A2A: Add A2A support to Agent
-What benefits does A2A bring?
-What is an Agent Card? Discoverability?
-A2A Client => Call A2A Agent Server
+- What benefits does A2A bring?
+- What is an Agent Card? Discoverability? => Show IBM & SAP Agent Cards
+- A2A Client => Call A2A Agent Server
 
 #### 3. Let the Agents collaborate w/ A2A (across borders)!
 - Use Built Agent (Step (1) and (2))
