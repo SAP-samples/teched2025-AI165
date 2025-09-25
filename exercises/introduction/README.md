@@ -41,3 +41,10 @@ By combining LLM reasoning with specialized tools, Agents enable end-to-end auto
 ### Joule Studio
 Joule Studio is a capability in SAP Build. With it, you can build custom Agents, using its built-in Agent Builder, and attach reusable tools through so called Joule Skills to them.  
 Joule, SAP’s AI Copilot, can then leverage your custom Agents and their skills to complete a task.
+
+### The A2A Protocol
+
+Agent-to-Agent (A2A) is a protocol designed to enable agentic AI interoperability. Created by Google with SAP being one of multiple founding contributors, the project is now driven as part of the Linux Foundation, following a collaborative and open source approach.
+
+The protocol recognizes that, increasingly, Agents from different vendors and on different platforms need to collaborate with each other. To faciliate this interoperability between Agents, A2A describes a standarized way for Agents to communicate with each other.  
+Besides, it now provides SDKs to easily implement this communication pattern, and as such comply with the protocol.
