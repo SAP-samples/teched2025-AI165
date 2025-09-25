@@ -7,11 +7,19 @@ At the end of the session, you yourself will have:
 - Used the Agent-to-Agent (A2A) protocol for the communication between the Agents
 - Invoked your Agent from within Joule (SAP's AI Copilot) as the entry point
 
+### Architecture and Demo
+describe shortly the use case in 2-3 sentences here
+
+(do a quick demo of the desired end result of the hands-on)
+
+![solution diagram](images/solution-diagram-example.svg)
+
 ## Terms and Definitions
 If you're already familiar with these terms and concepts, feel free to skip ahead to the first [exercise](../ex0/README.md).
 
 ### LLMs
-Large Language Models (**LLMs**) are very large neural networks trained on massive text datasets to understand and generate human-like language and behaviour. These models learn from huge corpora—often a large fraction of the public internet (Wikipedia, news sites, forums, books, code repositories, etc.).  
+Large Language Models (**LLMs**) are very large neural networks trained on massive text datasets to understand and generate human-like language and behaviour. These models learn from huge corpora—often a large fraction of the public internet (Wikipedia, news sites, forums, books, code repositories, etc.).
+
 Given an input, an LLM can produce coherent, contextually relevant responses. They are used for tasks such as Q&A, summarization, translation, and code generation.
 
 ![structure GenAI](images/adi-structure-genai.png)
@@ -19,7 +27,8 @@ Given an input, an LLM can produce coherent, contextually relevant responses. Th
 TODO: make the image smaller, and add subtitle
 
 ### Agents
-An **Agent** is a software system that uses a large language model (LLM) to reason, plan, and take actions in an environment. The term 'Agent' existed before LLMs, but today it usually means an LLM-driven system that can interact with tools and systems.  
+An **Agent** is a software system that uses a large language model (LLM) to reason, plan, and take actions in an environment. The term 'Agent' existed before LLMs, but today it usually means an LLM-driven system that can interact with tools and systems.
+
 In essence, the LLM proposes a plan or next action. The Agent invokes tools to carry out that action, then returns results to the LLM for further reasoning or adaptation.
 
 Common types of tools an Agent uses:
