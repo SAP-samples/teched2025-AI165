@@ -1,10 +1,18 @@
 # Introduction
 
+## Goal formulation for this hands-on
+At the end of the session, you yourself will have:
+- Built a custom Agent in Joule Studio
+- Attached Tools as Joule Skills to integrate it with an external partner Agent from IBM
+- Used the Agent-to-Agent (A2A) protocol for the communication between the Agents
+- Invoked your Agent from within Joule (SAP's AI Copilot) as the entry point
+
 ## Terms and Definitions
-If you're already familiar with these terms and concepts, feel free to skip ahead to the first exercise.
+If you're already familiar with these terms and concepts, feel free to skip ahead to the first [exercise](../ex0/README.md).
 
 ### LLMs
-Large Language Models (**LLMs**) are very large neural networks trained on massive text datasets to understand and generate human-like language and behaviour. These models learn from huge corpora—often a large fraction of the public internet (Wikipedia, news sites, forums, books, code repositories, etc.). Given an input, an LLM can produce coherent, contextually relevant responses. They are used for tasks such as Q&A, summarization, translation, and code generation.
+Large Language Models (**LLMs**) are very large neural networks trained on massive text datasets to understand and generate human-like language and behaviour. These models learn from huge corpora—often a large fraction of the public internet (Wikipedia, news sites, forums, books, code repositories, etc.).  
+Given an input, an LLM can produce coherent, contextually relevant responses. They are used for tasks such as Q&A, summarization, translation, and code generation.
 
 ![structure GenAI](images/adi-structure-genai.png)
 
