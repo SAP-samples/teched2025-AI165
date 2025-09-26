@@ -12,7 +12,7 @@ describe shortly the use case in 2-3 sentences here
 
 (do a quick demo of the desired end result of the hands-on)
 
-![solution diagram](images/solution-diagram-example.svg)
+![the solution diagram](images/solution-diagram.png)
 
 ## Terms and Definitions
 If you're already familiar with these terms and concepts, feel free to skip ahead to the first [exercise](../ex0/README.md).
@@ -22,9 +22,9 @@ Large Language Models (**LLMs**) are very large neural networks trained on massi
 
 Given an input, an LLM can produce coherent, contextually relevant responses. They are used for tasks such as Q&A, summarization, translation, and code generation.
 
-![structure GenAI](images/adi-structure-genai.png)
+<img src="images/adi-structure-genai.png" alt="structure GenAI" style="max-width: 76%; height: auto;">
 
-TODO: make the image smaller, and add subtitle
+TODO: add subtitle to image
 
 ### Agents
 An **Agent** is a software system that uses a large language model (LLM) to reason, plan, and take actions in an environment. The term 'Agent' existed before LLMs, but today it usually means an LLM-driven system that can interact with tools and systems.
