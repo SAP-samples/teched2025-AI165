@@ -14,11 +14,11 @@ At the end of the session, you yourself will have:
 > [!IMPORTANT]
 > The Business Partner Invoicing Agent described here doesn’t exist and is purely a fictional concept created for a hands-on session scenario.
 
-In this hands-on session we'll work with a fictional "Business Partner Invoicing" scenario in which business partners send invoices that your company must pay. As a first step, an agent will extract the invoice information and store it in the correct business partner record in SAP S/4HANA. This agent is called the "Business Partner Invoicing Agent" and was previously defined in Joule Studio as a custom agent. Assume the invoice has already been received (for example, via email).
+In this hands-on session we'll work with a **fictional** "Business Partner Invoicing" scenario in which business partners send invoices that your company must pay. As a first step, an **agent** will extract the invoice information and store it in the correct **business partner** record in SAP S/4HANA. This agent is called the "Business Partner Invoicing Agent" and was previously defined in **Joule Studio** as a custom agent. Assume the invoice has already been received (for example, via email).
 
-You, as the end user, interact only with the Business Partner Invoicing Agent, which in turn has several attached tools. If the agent cannot find a matching business partner, it asks whether to create a new one. With approval, it automatically collaborates with IBM's "ServiceNow Ticketing Agent" (invoked via IBM watsonx Orchestrate) in the background to open a ServiceNow ticket requesting business partner creation.
+You, as the end user, interact only with the Business Partner Invoicing Agent, which in turn has several attached **tools**. If the agent cannot find a matching business partner, it asks whether to create a new one. With approval, it automatically collaborates with IBM's "**ServiceNow** Ticketing Agent" (invoked via **IBM watsonx Orchestrate** in the cloud) in the background to open a ServiceNow ticket requesting business partner creation.
 
-Note that the two agents communicate using the Agent2Agent (A2A) protocol. This workflow minimizes manual work and speeds up the storage and processing of invoices that your company must pay.
+Note that the two agents communicate using the Agent2Agent (**A2A**) protocol. This workflow minimizes manual work and speeds up the storage and processing of invoices that your company must pay.
 
 ### Architecture Diagram
 (maybe we should add 1-2 sentences here, describing the architecture)
