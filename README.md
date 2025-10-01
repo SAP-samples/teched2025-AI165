@@ -55,8 +55,12 @@ Note that the two agents communicate using the Agent2Agent (**A2A**) protocol. T
 - Setup via Terraform (optional)
 
 ## Requirements
+There are only a few requirements to follow the exercises. Everything will already be installed on the machine provided for the live hands-on session. You will also be given access to Joule Studio and its Agent Builder.
 
-The requirements to follow the exercises in this repository are...
+- A Chromium-based browser (e.g., Google Chrome)
+- Node.js v22.17.0 (LTS)
+- A text editor, such as VS Code
+- Access to Joule Studio and its Agent Builder
 
 ## Exercises
 
