@@ -14,8 +14,6 @@ import { A2AClient } from "@a2a-js/sdk/client";
 
 const { uuid } = cds.utils;
 
-const { SERVICENOW_A2A_SERVER } = process.env;
-
 export default class A2ARouterService extends cds.ApplicationService {
     async init(): Promise<void> {
         await super.init();
@@ -25,7 +23,11 @@ export default class A2ARouterService extends cds.ApplicationService {
     private triggerA2A = async (request: cds.Request): Promise<string> => {
         const task: string = request.data.task;
         const messageId = uuid();
-        const client = await A2AClient.fromCardUrl(SERVICENOW_A2A_SERVER + "/.well-known/agent-card.json");
+        // TODO: assert env var is set
+        let url: string | undefined = process.env.SERVICENOW_A2A_SERVER_URL;
+        if (url?.endsWith("/")) url = url?.slice(0, -1);
+        console.log("A2A Server URL:", url);
+        const client = await A2AClient.fromCardUrl(url + "/.well-known/agent-card.json");
 
         let taskId: string | undefined;
 
