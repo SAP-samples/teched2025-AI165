@@ -1,0 +1,26 @@
+{
+  "name": "business-partner-invoicing",
+  "version": "1.0.0",
+  "description": "A simple CAP project.",
+  "dependencies": {
+    "@a2a-js/sdk": "^0.3.4",
+    "@sap/cds": "^9",
+    "express": "^4"
+  },
+  "devDependencies": {
+    "@cap-js/cds-typer": ">=0.1",
+    "@cap-js/cds-types": "^0.14.0",
+    "@cap-js/sqlite": "^2",
+    "@types/node": "^22.0.0",
+    "prettier": "3.6.2",
+    "tsx": "^4",
+    "typescript": "^5"
+  },
+  "scripts": {
+    "start": "cds-serve"
+  },
+  "private": true,
+  "imports": {
+    "#cds-models/*": "./@cds-models/*/index.js"
+  }
+}
