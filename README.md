@@ -18,6 +18,9 @@ In this hands-on session we'll work with a **fictional** "Business Partner Invoi
 
 You, as the end user, interact only with the Business Partner Invoicing Agent, which in turn has several attached **tools**. If the agent cannot find a matching business partner, it asks whether to create a new one. With approval, it automatically collaborates with IBM's "**ServiceNow** Ticketing Agent" (invoked via **IBM watsonx Orchestrate** in the cloud) in the background to open a ServiceNow ticket requesting business partner creation.
 
+IBM watsonx Orchestrate is IBM’s open platform for building, managing, observing, and governing AI agents. In addition to its low-code and pro-code agent development capabilities, it also provides a catalog of prebuilt agents that simplify access to AI tools from various domains like Human Resources, Sales, Procurement, and Customer Care. This workshop leverages the latter, integrating ServiceNow customer care capabilities like ticket management.
+Reference: https://www.ibm.com/docs/en/watsonx/watson-orchestrate/base
+
 Note that the two agents communicate using the Agent2Agent (**A2A**) protocol. This workflow minimizes manual work and speeds up the storage and processing of invoices that your company must pay.
 
 ### Architecture Diagram
