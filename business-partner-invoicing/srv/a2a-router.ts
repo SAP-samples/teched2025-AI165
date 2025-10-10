@@ -16,13 +16,13 @@ export default class A2ARouterService extends cds.ApplicationService {
     async init(): Promise<void> {
         await super.init();
         this.on("triggerA2A", this.triggerA2A);
+        if (!process.env.SERVICENOW_A2A_SERVER_URL) throw new Error("A2A Server url is not set.");
     }
 
     private triggerA2A = async (request: cds.Request): Promise<{ taskId: string | null; agentResponse: string }> => {
         const task = request.data.task as string;
         const messageId: string = uuid();
-        if (!process.env.SERVICENOW_A2A_SERVER_URL) throw new Error("A2A Server url is not set.");
-        let url: string = process.env.SERVICENOW_A2A_SERVER_URL;
+        let url = process.env.SERVICENOW_A2A_SERVER_URL as string;
         if (url?.endsWith("/")) url = url?.slice(0, -1);
         logger.log("A2A Server url is set to", url);
 
