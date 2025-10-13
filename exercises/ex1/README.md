@@ -1,32 +1,34 @@
 # Exercise 1 - Build Your First Agent in Joule Studio
 
-### Learning Objective
-Learn how to create and test an agent in Joule Studio that responds to inquiries about business partners using a predefined dataset. Then integrate live data retrieval via OData actions and Joule skills.
+> [!NOTE]  
+> **Learning Objective**:
+>
+> - Build your first Agent in Joule Studio that responds to inquiries about business partners
+> - Learn how you can test and debug the Agent
+> - Create a simple Joule Skill and attach it as a tool to the Agent 
+>
+> **Time Estimate**: Approximately 30 minutes.
 
-### Time Estimate
-Approximately 30 minutes.
+## Exercise Steps
 
-### Exercise Steps
-
-1. **Login to Joule Studio**
-   - Visit [Joule Studio](jouleStudioUrl).
-   - Login with the provided username and password.
+1. Login to Joule Studio
+   - Visit [Joule Studio](`jouleStudioUrl`).
+   - Login with the username and password that were provided to you.
    - Choose the identity provider containing “ondemand.com” in its name.
 
-2. **Create a New Environment**
-   - Go to the Control Tower section.
-   - Create a new environment.
+2. Create a new environment
+   - Go to the Control Tower section and create a new environment.
    - Name the environment with your workstation’s printed number included.
 
-3. **Set Up a Joule Skills Project**
-   - Navigate to the Lobby.
-   - Create a new Joule Skills project.
-   - Use your workstation number as part of the project name to ensure uniqueness.
+3. Create a Joule Skills project
+   - Navigate back to the Lobby.
+   - There, create a new Joule Skills project.
+   - Use your workstation number again as part of the project name to ensure uniqueness.
 
-4. **Develop the Business Partner Agent**
-   - Within your project, create a new agent named **Business Partner Invoicing Agent**.
-   - Configure the agent to provide information on known business partners for the Business Partner Invoicing scenario.
-   - Use the JSON records below as the data prompt for the agent.
+4. Start building the Business Partner Invoicing Agent
+   - Within your Joule Skills project, create a new Agent with the name above.
+   - Prompt the Agent to provide information on known business partners in the Business Partner Invoicing scenario.
+   - Use the JSON records below and integrate them as is (hard coded) into the prompt of the Agent.
 
    ```json
    {
@@ -95,40 +97,29 @@ Approximately 30 minutes.
    }
    ```
 
-5. **Test the Agent**
-   - Click the **Test** button in the project interface.
-   - Think of a meaningful question to evaluate the agent.
-   - Open the logs to monitor the agent’s actions and ensure proper functioning.
+5. Test the Agent
+   - Click the Test button towards the right of where you prompted your Agent.
+   - While the test package is deployed, think of a good question for the Agent to evaluate it.
+   - If the Agent doesn't behave as expected, open the logs view to monitor the thinking and decisions of the Agent.
+   - If not already done, ask the Agent “Provide information about the business partners called Cymbal Direct.”. Does the response match the details from the JSON records?
 
-6. **Verify the Agent’s Response**
-   - Ask the agent: “Provide information about the business partner called Cymbal Direct.”
-   - Confirm that the agent returns a response matching the details from the JSON record.
-
-### Learning Objective
-Learn how to create and test an agent in Joule Studio that responds to inquiries about business partners using a predefined dataset, then integrate live data retrieval via OData actions and Joule skills.
-
-7. **Create a new Action Project**
-   - Under Connectors -> Actions, create a new Action Project of type "OData Destination."
-   - Configure it to use the `BUSINESS_PARTNER_SERVICE` destination to retrieve business partner data.
-
-8. **Test the Action**
+7. Create a new Action Project to outsource the business partners information to an external service
+   - Go to Connectors -> Actions to create it and use OData Destination as type.
+   - As destination select the `BUSINESS_PARTNER_SERVICE` one.
+   - Configure the inputs and outputs as needed
    - Test the action and call the `/BusinessPartners` endpoint (GET).
    - Verify the output matches the business partner information from the hardcoded JSON.
 
-9. **Add a Joule Skill to Your Original Project**
-   - Return to your Joule Skills project, where your also defined your Agent.
-   - Create a new Joule Skill that invokes the action and outputs the business partners.
+8. Define a Joule Skill in your project that wraps and invokes the action
+   - In it configure a Skill Output and pass to it the output of the action call
 
-10. **Integrate the Skill into Your Agent**
-    - In the agent definition, register the Joule Skill as a tool.
+10. Attach the Joule Skill you just created to your Agent as a tool
     - Remove the hardcoded JSON of the records of the business partners entirely from the prompt.
-    - Instruct the agent to instead call your tool to retrieve the information about the business partners.
+    - Prompt the Agent to instead call your tool to retrieve the information about the business partners.
 
-11. **Retest the Upgraded Agent**
-    - Test the agent again with the query: “Provide information about the business partner called Cymbal Direct.”
-    - Review the logs to confirm the tool is called and live data is used in the response.
+11. Retest the Agent
+    - Click again the test button, and ask it again “Provide information about the business partner called Cymbal Direct.”
+    - Verfiy that the response is the same from earlier
+    - Review the logs to confirm that the tool was actually called.
 
-### Hints
-- Ensure that the environment and project names include your workstation number exactly as printed.
-- Use the logs to identify process issues if the test does not yield the expected output.
-- Review each configuration step to avoid common setup mistakes.
+Click [here]() to move to the next exercise, exercise 2.
