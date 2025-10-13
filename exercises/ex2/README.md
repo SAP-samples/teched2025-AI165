@@ -1,27 +1,40 @@
-# Exercise 2 - Discover and Invoke Agent as per A2A
+# Exercise 2 - Discover and Invoke Agent via A2A
 
-We mentioned briefly already what the A2A protocol is and who created it. In this exercise, you'll get to know A2A in more detail, and put that knowledge to use in order to invoke an Agent as per A2A.
+We mentioned briefly already what the A2A protocol is and who created it. In this exercise, you'll get to know A2A in more detail, and put that knowledge to use in order to discover and invoke an Agent via A2A.
 
-**Learning Objectives**:
+> [!NOTE]  
+> **Learning Objectives**:
+> 
+> - Understand the purpose of the Agent Card and its structure
+> - Understand the request/response structure when using A2A
+> - Send such a request to an A2A Server to invoke an Agent
+> - How A2A handles asynchronous, long-running tasks
+>
+> **Time Estimate**: Approximately 30 minutes.
 
-- Understand the purpose of the Agent Card and its structure
-- See the structure of the request/response when using A2A
-- Send a request to an A2A Server in order to invoke an Agent
-- Learn about how A2A handles asynchronous, long-running tasks
+## Benefits of A2A
 
-## Why use A2A?
+The Agent2Agent (A2A) protocol enables seamless interoperability between AI agents developed by different vendors or using varied frameworks. This protocol breaks down traditional silos by allowing agents to communicate without requiring shared infrastructure, memory, or tools. The result is a collaborative AI ecosystem where specialized agents can combine their individual strengths to tackle complex tasks that would exceed the capabilities of any single agent. Enterprises can therefore automate sophisticated workflows across diverse systems, leveraging contributions from over 50 technology partners including SAP.
 
-The Agent2Agent (A2A) protocol enables seamless interoperability between AI agents developed by different vendors or using varied frameworks. It breaks down silos by allowing agents to communicate without shared infrastructure, memory, or tools. This fosters a collaborative AI ecosystem where specialized agents can combine strengths for complex tasks that one agent alone cannot handle. As a result, enterprises can automate sophisticated workflows across diverse systems, supported by contributions from over 50 technology partners like Atlassian and Salesforce.
+A2A enhances security and preserves agent opacity during interactions. Agents exchange information without exposing their internal logic, proprietary tools, or operational state, thereby protecting valuable intellectual property. The protocol incorporates enterprise-grade authentication mechanisms such as OAuth tokens or API keys, and builds upon established standards including HTTP(S) and JSON-RPC 2.0 for reliable and secure transmissions. This design philosophy treats remote agents as black boxes, significantly reducing risks in multi-agent collaborations while enabling safe coordination on long-running tasks with comprehensive status synchronization.
 
-A2A enhances security and preserves agent opacity during interactions. Agents exchange information without exposing internal logic, proprietary tools, or state, protecting intellectual property. It incorporates enterprise-grade authentication, such as OAuth tokens or API keys, and builds on standards like HTTP(S) and JSON-RPC 2.0 for reliable, secure transmissions. This design treats remote agents as black boxes, reducing risks in multi-agent collaborations while enabling safe coordination on long-running tasks with status synchronization.
+The protocol supports flexible and efficient communication modes tailored to specific task requirements. Key communication capabilities include:
 
-The protocol supports flexible and efficient communication modes tailored to task needs. Agents discover capabilities through JSON-based Agent Cards, allowing informed selection of partners and negotiation of formats like text, files, or media. It handles synchronous requests, real-time streaming via Server-Sent Events, and asynchronous notifications, accommodating quick replies or extended operations that span hours. These features streamline task management, minimize errors in multi-turn workflows, and promote scalable innovation in AI applications.
+- **Agent discovery** through JSON-based Agent Cards for informed partner selection
+- **Format negotiation** supporting text, files, and media content types
+- **Synchronous requests** for immediate response scenarios
+- **Real-time streaming** via Server-Sent Events for continuous data flow
+- **Asynchronous notifications** accommodating extended operations spanning multiple hours
+
+These features collectively streamline task management, minimize errors in multi-turn workflows, and establish a scalable foundation for innovation in AI applications across enterprise environments.
 
 ## Agent Card for Agent Discovery 
 
 The **Agent Card** is a JSON metadata document that functions as a digital business card for AI agents in the Agent2Agent (A2A) protocol, encapsulating essential details to facilitate initial discovery and secure interaction setup. It includes the agent's identity, service endpoint URL, A2A capabilities, authentication requirements, and a list of skills, allowing clients to parse this information and assess suitability for specific tasks.
 
 The primary purpose of the Agent Card lies in enhancing discoverability, enabling clients—acting on behalf of users—to locate and evaluate available A2A servers by retrieving and analyzing these cards, which reveal whether a remote agent's capabilities align with interaction needs, such as required operations or secure communication protocols. This **discoverability mechanism** streamlines partner selection, reduces integration friction, and promotes efficient collaboration in multi-agent ecosystems without exposing internal agent logic.
+
+## Exercise Steps
 
 Take a look at the Agent Card of the ServiceNow Ticketing Agent, which we'll be using in the scenario.
 
@@ -30,10 +43,6 @@ Take a look at the Agent Card of the ServiceNow Ticketing Agent, which we'll be 
     - the capabilities of the Agent
     - the URL to invoke the Agent later on
     - the mandatory information that the Agent needs to create a new ticket in ServiceNow
-
-## Invoke ServiceNow Ticketing Agent (A2A)
-
-Now, it's time to use the information from the Agent Card to actually invoke the Agent.
 
 2. Open a terminal emulator (e.g., PowerShell on Windows) and run the curl command below to instruct the Agent to create a ServiceNow ticket.  
   Prepare the following:
@@ -137,3 +146,6 @@ Now, it's time to use the information from the Agent Card to actually invoke the
     ```
 
 6. Poll the task status again to know if the ticket was created successfully this time around.
+
+
+Click [here]() to move to the last exercise, exercise 3.
