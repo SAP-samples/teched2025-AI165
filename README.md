@@ -9,12 +9,14 @@ At the end of the session, you yourself will have:
 - Used the Agent2Agent (A2A) protocol for the communication between the Agents
 - Invoked your Agent from within Joule (SAP's AI Copilot) as the entry point
 
-## The scenario: Business Partner Invoicing Agent
+## The scenario: Business Partner Invoicing
 
 > [!IMPORTANT]
 > The Business Partner Invoicing Agent described here doesn’t exist and is purely a fictional concept created for a hands-on session scenario.
 
 In this hands-on session we'll work with a **fictional** "Business Partner Invoicing" scenario in which business partners send invoices that your company must pay. As a first step, an **agent** will extract the invoice information and store it in the correct **business partner** record in SAP S/4HANA. This agent is called the "Business Partner Invoicing Agent" and was previously defined in **Joule Studio** as a custom agent. Assume the invoice has already been received (for example, via email).
+
+Joule Studio is a capability within SAP Build that enables the construction of custom Agents using its built-in Agent Builder. Users can attach reusable tools, known as Joule Skills, to these Agents. **Joule**, SAP's AI Copilot, can then leverage your custom Agents and their skills to complete designated tasks.
 
 You, as the end user, interact only with the Business Partner Invoicing Agent, which in turn has several attached **tools**. If the agent cannot find a matching business partner, it asks whether to create a new one. With approval, it automatically collaborates with IBM's "**ServiceNow** Ticketing Agent" (invoked via **IBM watsonx Orchestrate** in the cloud) in the background to open a ServiceNow ticket requesting business partner creation.
 
@@ -68,12 +70,9 @@ There are only a few requirements to follow the exercises. Everything will alrea
 ## Exercises
 
 - [Terms and Definitions](exercises/ex0/README.md)
-- [Exercise 1 - First Exercise Description](exercises/ex1/)
-    - [Exercise 1.1 - Exercise 1 Sub Exercise 1 Description](exercises/ex1#exercise-11-sub-exercise-1-description)
-    - [Exercise 1.2 - Exercise 1 Sub Exercise 2 Description](exercises/ex1#exercise-12-sub-exercise-2-description)
-- [Exercise 2 - Second Exercise Description](exercises/ex2/)
-    - [Exercise 2.1 - Exercise 2 Sub Exercise 1 Description](exercises/ex2#exercise-21-sub-exercise-1-description)
-    - [Exercise 2.2 - Exercise 2 Sub Exercise 2 Description](exercises/ex2#exercise-22-sub-exercise-2-description)
+- [Exercise 1 - Build Your First Agent in Joule Studio](exercises/ex1/README.md)
+- [Exercise 2 - Discover and Invoke Agent via A2A](exercises/ex2/README.md)
+- [Exercise 3 - TBD](exercises/ex3/README.md)
 
 ## Contributing
 Please read the [CONTRIBUTING.md](./CONTRIBUTING.md) to understand the contribution guidelines.
