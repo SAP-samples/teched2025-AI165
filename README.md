@@ -33,32 +33,6 @@ Note that the two agents communicate using the Agent2Agent (**A2A**) protocol. T
 ### Demo
 (add a demo video or maybe a demo gif. during the hands-on session we can think of doing a quick live demo)
 
-## Outline - TO BE REMOVED
-
-### Introduction to Session
-- What is an Agent? Difference to Algorithm, Chain,...
-- Joule Studio Agent Builder
-- A2A high level information => strategy?
-- Scenario description(s): (1), (2), (3)
-- Architecture/Demo
-
-### Hands-on Part
-
-#### 1. Build an Agent
-- How to
-- Trace of Agent's steps
-
-#### 2. Agent x A2A: Add A2A support to Agent
-- What benefits does A2A bring?
-- What is an Agent Card? Discoverability? => Show IBM & SAP Agent Cards
-- A2A Client => Call A2A Agent Server
-
-#### 3. Let the Agents collaborate w/ A2A (across borders)!
-- Use Built Agent (Step (1) and (2))
-- Deployed A2A Agents (SAP & IBM)
-- Trace of collaboration (Orchestrator?)
-- Setup via Terraform (optional)
-
 ## Requirements
 There are only a few requirements to follow the exercises. Everything will already be installed on the machine provided for the live hands-on session. You will also be given access to Joule Studio and its Agent Builder.
 
@@ -72,7 +46,7 @@ There are only a few requirements to follow the exercises. Everything will alrea
 - [Terms and Definitions](exercises/ex0/README.md)
 - [Exercise 1 - Build Your First Agent in Joule Studio](exercises/ex1/README.md)
 - [Exercise 2 - Discover and Invoke Agent via A2A](exercises/ex2/README.md)
-- [Exercise 3 - TBD](exercises/ex3/README.md)
+- [Exercise 3 - Agent Collaboration via A2A](exercises/ex3/README.md)
 
 ## Contributing
 Please read the [CONTRIBUTING.md](./CONTRIBUTING.md) to understand the contribution guidelines.
