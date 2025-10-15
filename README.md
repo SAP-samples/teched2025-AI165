@@ -28,7 +28,7 @@ Note that the two agents communicate using the Agent2Agent (**A2A**) protocol. T
 ### Architecture Diagram
 (maybe we should add 1-2 sentences here, describing the architecture)
 
-![the solution diagram](solution-diagram.png)
+![the solution diagram](docs/solution-diagram.png)
 
 ### Demo
 (add a demo video or maybe a demo gif. during the hands-on session we can think of doing a quick live demo)
