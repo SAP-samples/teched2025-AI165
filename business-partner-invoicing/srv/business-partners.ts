@@ -1,0 +1,29 @@
+import cds from "@sap/cds";
+import fs from "node:fs/promises";
+
+interface BusinessPartner {
+    name: string;
+    description: string;
+    industry: string;
+    country: string;
+    street: string;
+    zipcode: string;
+    city: string;
+    emailAddress: string;
+    phoneNumber: string;
+    checkingAccountNumber: string;
+}
+
+export default class BusinessPartnersService extends cds.ApplicationService {
+    async init(): Promise<void> {
+        await super.init();
+        this.on("getBusinessPartners", this.getBusinessPartners);
+    }
+
+    private getBusinessPartners = async (request: cds.Request): Promise<{ value: BusinessPartner[] }> => {
+        const content = await fs.readFile("srv/business-partners.json", "utf-8");
+        const businessPartners = JSON.parse(content) as { value: BusinessPartner[] };
+
+        return businessPartners;
+    };
+}
