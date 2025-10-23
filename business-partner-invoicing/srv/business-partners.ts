@@ -14,6 +14,8 @@ interface BusinessPartner {
     checkingAccountNumber: string;
 }
 
+const logger = cds.log("BusinessPartnersService");
+
 export default class BusinessPartnersService extends cds.ApplicationService {
     async init(): Promise<void> {
         await super.init();
@@ -21,9 +23,13 @@ export default class BusinessPartnersService extends cds.ApplicationService {
     }
 
     private getBusinessPartners = async (request: cds.Request): Promise<{ value: BusinessPartner[] }> => {
-        const content = await fs.readFile("srv/business-partners.json", "utf-8");
-        const businessPartners = JSON.parse(content) as { value: BusinessPartner[] };
-
-        return businessPartners;
+        try {
+            const content = await fs.readFile("srv/business-partners.json", "utf-8");
+            const businessPartners = JSON.parse(content) as { value: BusinessPartner[] };
+            return businessPartners;
+        } catch (error) {
+            logger.error(error);
+            return { value: [] };
+        }
     };
 }
