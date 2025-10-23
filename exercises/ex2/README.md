@@ -69,7 +69,7 @@ Take a look at the Agent Card of the ServiceNow Ticketing Agent, which we'll be 
             "messageId": "1"
           },
           "configuration": {
-            "blocking": false
+            "blocking": true
           }
         }
       }'
@@ -100,6 +100,9 @@ Take a look at the Agent Card of the ServiceNow Ticketing Agent, which we'll be 
               }
             ],
             "messageId": "2"
+          },
+          "configuration": {
+            "blocking": false
           }
         }
       }'
