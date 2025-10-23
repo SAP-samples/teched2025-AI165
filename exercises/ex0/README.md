@@ -1,6 +1,6 @@
 # Exercise 0 - Terms and Definitions
 
-If you are already familiar with these terms and concepts, please proceed directly to the first practical [exercise](../ex1/).
+If you are already familiar with these terms and concepts, please proceed directly to the first practical [exercise](../ex1/README.md).
 
 > [!NOTE]  
 > **Learning Objectives**:

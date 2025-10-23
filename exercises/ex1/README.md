@@ -123,4 +123,4 @@
    - Verify that the response is identical to the previous test results.
    - Review the logs to confirm that the tool was successfully invoked.
 
-Click [here]() to proceed to the next exercise, Exercise 2.
+Click [here](../ex2/README.md) to proceed to the next exercise, Exercise 2.

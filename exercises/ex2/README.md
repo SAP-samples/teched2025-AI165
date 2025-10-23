@@ -148,4 +148,4 @@ Take a look at the Agent Card of the ServiceNow Ticketing Agent, which we'll be 
 6. Poll the task status again to know if the ticket was created successfully this time around.
 
 
-Click [here]() to move to the last exercise, exercise 3.
+Click [here](../ex3/README.md) to move to the last exercise, exercise 3.
