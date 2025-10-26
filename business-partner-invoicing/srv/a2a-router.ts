@@ -24,7 +24,7 @@ export default class A2ARouterService extends cds.ApplicationService {
         if (url?.endsWith("/")) url = url?.slice(0, -1);
 
         try {
-            const client = await A2AClient.fromCardUrl(url + "/.well-known/agent.json");
+            const client = await A2AClient.fromCardUrl(url + "/.well-known/agent-card.json");
             // SEND A MESSAGE TO THE AGENT.
             const sendParams: MessageSendParams = {
                 message: {

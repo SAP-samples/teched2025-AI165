@@ -38,8 +38,8 @@ The primary purpose of the Agent Card lies in enhancing discoverability, enablin
 
 Take a look at the Agent Card of the ServiceNow Ticketing Agent, which we'll be using in the scenario.
 
-1. Open the Agent Card in your Browser - [Agent Card](`serviceNowTicketingAgentUrl`.well-known/agent.json)  
-  Notice how the path in the URL is `.well-known/agent.json`. The Agent Card can always be found under this path. Identify the:  
+1. Open the Agent Card in your Browser - [Agent Card](`serviceNowTicketingAgentUrl`.well-known/agent-card.json)  
+  Notice how the path in the URL is `.well-known/agent-card.json`. The Agent Card can always be found under this path. Identify the:  
     - the capabilities of the Agent
     - the URL to invoke the Agent later on
     - the mandatory information that the Agent needs to create a new ticket in ServiceNow
