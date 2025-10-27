@@ -3,11 +3,11 @@
 This repository contains the material for the SAP TechEd 2025 session called AI165 - Interconnect custom AI agents with your cloud and partner ecosystem.
 
 ## Goal formulation for this hands-on
-At the end of the session, you yourself will have:
-- Built a custom Agent in Joule Studio
-- Attached Tools as Joule Skills to integrate it with an external partner Agent from IBM
-- Used the Agent2Agent (A2A) protocol for the communication between the Agents
-- Invoked your Agent from within Joule (SAP's AI Copilot) as the entry point
+By the end of this session, participants will have successfully:
+- Built a custom agent in Joule Studio using its new Agent Builder
+- Enabled the agent to collaborate with an external partner agent from IBM
+- Utilized the Agent2Agent (A2A) protocol for standardized communication between agents and enhanced agent interoperability
+- Invoked the custom agent from within Joule (SAP's AI Copilot) as the primary entry point
 
 ## The scenario: Business Partner Invoicing
 
