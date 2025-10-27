@@ -14,16 +14,20 @@ At the end of the session, you yourself will have:
 > [!IMPORTANT]
 > The Business Partner Invoicing Agent described here doesn’t exist and is purely a fictional concept created for a hands-on session scenario.
 
-In this hands-on session we'll work with a **fictional** "Business Partner Invoicing" scenario in which business partners send invoices that your company must pay. As a first step, an **agent** will extract the invoice information and store it in the correct **business partner** record in SAP S/4HANA. This agent is called the "Business Partner Invoicing Agent" and was previously defined in **Joule Studio** as a custom agent. Assume the invoice has already been received (for example, via email).
+In this hands-on session, we will work with a **fictional** Business Partner Invoicing scenario in which your company's business partners send invoices for services they have provided. Assume the invoices have been sent via email, for example. The invoice then needs to be attached to the corresponding business partner record in SAP S/4HANA so that it can be paid later. The Business Partner Invoicing Agent assists you with this task and is able to:
 
-Joule Studio is a capability within SAP Build that enables the construction of custom Agents using its built-in Agent Builder. Users can attach reusable tools, known as Joule Skills, to these Agents. **Joule**, SAP's AI Copilot, can then leverage your custom Agents and their skills to complete designated tasks.
+1. Provide information about business partners from the records of known business partners
+2. Create tickets in ServiceNow to add new business partners to the records
+3. Attach an invoice to the business partner record in SAP S/4HANA (simulated)
 
-You, as the end user, interact only with the Business Partner Invoicing Agent, which in turn has several attached **tools**. If the agent cannot find a matching business partner, it asks whether to create a new one. With approval, it automatically collaborates with IBM's "**ServiceNow** Ticketing Agent" (invoked via **IBM watsonx Orchestrate** in the cloud) in the background to open a ServiceNow ticket requesting business partner creation.
+To build custom agents like the one described above, you use **Joule Studio**, a capability within SAP Build, and its new built-in Agent Builder. You can either attach one of the out-of-the-box tools to an agent or build your own using Joule Skills. The latter can also be used for agent collaboration, where an agent collaborates with another (external) agent. **Joule**, SAP's AI Copilot, can then leverage your custom agents and their skills to complete designated tasks.
+
+In this scenario, you as the end user interact only with the Business Partner Invoicing Agent, which maintains knowledge about the business partners. However, if the agent cannot find the business partner in question, it collaborates with IBM's **ServiceNow** Ticketing Agent (invoked via **IBM watsonx Orchestrate** in the cloud) in the background to open a ServiceNow ticket requesting business partner creation.
 
 IBM watsonx Orchestrate is IBM’s open platform for building, managing, observing, and governing AI agents. In addition to its low-code and pro-code agent development capabilities, it also provides a catalog of prebuilt agents that simplify access to AI tools from various domains like Human Resources, Sales, Procurement, and Customer Care. This workshop leverages the latter, integrating ServiceNow customer care capabilities like ticket management.
 Reference: https://www.ibm.com/docs/en/watsonx/watson-orchestrate/base
 
-Note that the two agents communicate using the Agent2Agent (**A2A**) protocol. This workflow minimizes manual work and speeds up the storage and processing of invoices that your company must pay.
+Note that the two agents communicate using the Agent2Agent (**A2A**) protocol to facilitate agent interoperability. This workflow minimizes manual work and accelerates the storage and processing of invoices that your company must pay.
 
 ### Architecture Diagram
 (maybe we should add 1-2 sentences here, describing the architecture)
