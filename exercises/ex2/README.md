@@ -1,13 +1,13 @@
 # Exercise 2 - Discover and Invoke Agent via A2A
 
-We mentioned briefly already what the A2A protocol is and who created it. In this exercise, you'll get to know A2A in more detail, and put that knowledge to use in order to discover and invoke an Agent via A2A.
+We mentioned briefly already what the A2A protocol is and who created it. In this exercise, you'll get to know A2A in more detail, and put that knowledge to use in order to discover and invoke an agent via A2A.
 
 > [!NOTE]  
 > **Learning Objectives**:
 > 
 > - Understand the purpose of the Agent Card and its structure
 > - Understand the request/response structure when using A2A
-> - Send such a request to an A2A Server to invoke an Agent
+> - Send such a request to an A2A Server to invoke an agent
 > - How A2A handles asynchronous, long-running tasks
 >
 > **Time Estimate**: Approximately 30 minutes.
@@ -38,17 +38,17 @@ The primary purpose of the Agent Card lies in enhancing discoverability, enablin
 
 Take a look at the Agent Card of the ServiceNow Ticketing Agent, which we'll be using in the scenario.
 
-1. Open the Agent Card in your Browser - [Agent Card](`serviceNowTicketingAgentUrl`.well-known/agent-card.json)  
+1. Open the Agent Card in your Browser - [Agent Card](https://wxo-a2a-server.cfapps.eu10-004.hana.ondemand.com/.well-known/agent-card.json)  
   Notice how the path in the URL is `.well-known/agent-card.json`. The Agent Card can always be found under this path. Identify the:  
-    - the capabilities of the Agent
-    - the URL to invoke the Agent later on
-    - the mandatory information that the Agent needs to create a new ticket in ServiceNow
+    - the capabilities of the agent
+    - the URL to invoke the agent later on
+    - the mandatory information that the agent needs to create a new ticket in ServiceNow
 
-2. Open a terminal emulator (e.g., PowerShell on Windows) and run the curl command below to instruct the Agent to create a ServiceNow ticket.  
+2. Open a terminal emulator (e.g., PowerShell on Windows) and run the curl command below to instruct the agent to create a ServiceNow ticket.  
   Prepare the following:
     - Replace $A2A_SERVER_URL with the "service" or "invoke" URL from the Agent Card.
     - Update the message payload to include the mandatory fields for ticket creation: short description and priority.
-    - Set configuration.blocking to true so the request waits for the Agent to return the created ticket details.
+    - Set configuration.blocking to true so the request waits for the agent to return the created ticket details.
 
     ```
     curl --request POST \
@@ -63,7 +63,7 @@ Take a look at the Agent Card of the ServiceNow Ticketing Agent, which we'll be 
             "parts": [
               {
                 "kind": "text",
-                "text": "Instruct the Agent here..."
+                "text": "Instruct the agent here..."
               }
             ],
             "messageId": "1"
@@ -76,12 +76,12 @@ Take a look at the Agent Card of the ServiceNow Ticketing Agent, which we'll be 
     ```
 
 3. Handle long-running tasks with asynchronous invocation and polling  
-  In many real-world cases the Agent will perform work that takes more time (validations, external API calls, or multi-step processing). To avoid blocking your client:
+  In many real-world cases the agent will perform work that takes more time (validations, external API calls, or multi-step processing). To avoid blocking your client:
     - Set configuration.blocking back to false so the server returns an immediate acknowledgement.
     - The acknowledgement typically contains a task identifier (taskId) and a task status you can poll.
     - You can continue other work locally and poll the task status periodically until completion.
 
-    Submit a long-running task (non-blocking). We'll simply leave out the short description of the ticket, so that the Agent cannot complete the task just yet.
+    Submit a long-running task (non-blocking). We'll simply leave out the short description of the ticket, so that the agent cannot complete the task just yet.
 
     ```
     curl --request POST \
@@ -123,7 +123,7 @@ Take a look at the Agent Card of the ServiceNow Ticketing Agent, which we'll be 
       }'
     ```
 
-5. The Agent says it requires an additional input, which is of course the short description of the ticket. Provide it and reference again the previous task id. This way the Agent knows the request is related to the same task.
+5. The agent says it requires an additional input, which is of course the short description of the ticket. Provide it and reference again the previous task id. This way the agent knows the request is related to the same task.
 
     ```
     curl --request POST \
@@ -141,7 +141,7 @@ Take a look at the Agent Card of the ServiceNow Ticketing Agent, which we'll be 
               "text": "The short description is: Problem in chair not in computer."
             }
           ],
-          "messageId": "2",
+          "messageId": "3",
           "taskId": "'$TASK_ID'"
         }
       }
@@ -152,3 +152,11 @@ Take a look at the Agent Card of the ServiceNow Ticketing Agent, which we'll be 
 
 
 Click [here](../ex3/README.md) to move to the last exercise, exercise 3.
+
+## Test your Understanding
+
+1. Try to summarize the purpose of the Agent Card in two sentences or less.
+
+2. How does A2A facilitate handling of long-running tasks?
+
+2. What two protocol standards does A2A build on to send requests and for the request structure itself?

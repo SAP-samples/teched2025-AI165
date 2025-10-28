@@ -38,6 +38,7 @@ You can always jump to the solution [here](../../solution/full-agent-prompt.md) 
       - "Provide information about the business partner called Cymbal Direct."
       - "Provide information about the business partner called Siiidneeey Promo." (the agent should infer that you probably meant Sydney Promotions)
    - Should the agent not behave as expected, go through the (timeline) logs to try to find the issue.
+   - See if you can find the raw agent response in the logs, which hasn't been further processed by Joule yet
 
 6. Create a new Action Project to externalize business partner information
    - Navigate to Connectors → Actions to create a new action project using OData Destination as the type.
