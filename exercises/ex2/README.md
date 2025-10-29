@@ -40,9 +40,9 @@ Take a look at the Agent Card of the ServiceNow Ticketing Agent, which we'll be 
 
 1. Open the Agent Card in your Browser - [Agent Card](https://wxo-a2a-server.cfapps.eu10-004.hana.ondemand.com/.well-known/agent-card.json)  
   Notice how the path in the URL is `.well-known/agent-card.json`. The Agent Card can always be found under this path. Identify the:  
-    - the capabilities of the agent
-    - the URL to invoke the agent later on
-    - the mandatory information that the agent needs to create a new ticket in ServiceNow
+    - capabilities of the agent
+    - URL to invoke the agent later on
+    - mandatory information that the agent needs to create a new ticket in ServiceNow
 
 2. Open a terminal emulator (e.g., PowerShell on Windows) and run the curl command below to instruct the agent to create a ServiceNow ticket.  
   Prepare the following:
