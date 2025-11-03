@@ -40,9 +40,10 @@ Note that the two agents communicate using the Agent2Agent (**A2A**) protocol to
 
 ### Architecture Diagram
 
-<figure>
-    <img src="docs/solution-diagram.png" alt="the architecture diagram" width="1200">
-</figure>
+<p align="center">
+    <img src="./docs/solution-diagram.png" alt="Solution Diagram" />
+    <em>Architecture is subject to change</em>
+</p>
 
 ## Requirements
 There are only a few requirements to follow the exercises. Everything will already be installed on the machine provided for the live hands-on session. You will also be given access to Joule Studio and its Agent Builder.
