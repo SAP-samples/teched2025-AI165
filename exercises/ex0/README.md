@@ -23,7 +23,7 @@ Large Language Models (**LLMs**) are **extensive** neural networks **trained** o
 Given an input, an LLM can produce coherent, contextually relevant responses. They are utilized for tasks such as question-answering, summarization, translation, and code generation.
 
 <figure>
-    <img src="images/adi-structure-genai.png" alt="Architecture diagram: Generative AI components" width="700">
+    <img src="images/adi-structure-genai.png" alt="Generative AI components" width="700">
     <figcaption>Ambiguity of Generative AI terms</figcaption>
 </figure>
 

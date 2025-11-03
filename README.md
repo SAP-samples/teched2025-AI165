@@ -39,12 +39,10 @@ Reference: https://www.ibm.com/docs/en/watsonx/watson-orchestrate/base
 Note that the two agents communicate using the Agent2Agent (**A2A**) protocol to facilitate agent interoperability. This workflow minimizes manual work and accelerates the storage and processing of invoices that your company must pay.
 
 ### Architecture Diagram
-(maybe we should add 1-2 sentences here, describing the architecture)
 
-![the solution diagram](docs/solution-diagram.png)
-
-### Demo
-(add a demo video or maybe a demo gif. during the hands-on session we can think of doing a quick live demo)
+<figure>
+    <img src="docs/solution-diagram.png" alt="the architecture diagram" width="1200">
+</figure>
 
 ## Requirements
 There are only a few requirements to follow the exercises. Everything will already be installed on the machine provided for the live hands-on session. You will also be given access to Joule Studio and its Agent Builder.
