@@ -7,7 +7,7 @@
 > - Learn how to test and debug the agent
 > - Create a simple Joule Skill and attach it as a tool to the agent 
 >
-> **Time Estimate**: Approximately 1 hour.
+> **Time Estimate**: Approximately 40 minutes.
 
 You can always jump to the solution [here](../../solution/full-agent-prompt.md) for a possible, full agent prompt or in Joule Studio [here](https://ai-agent-beta-build-default-eu12-ai165.canary-eu12.process-automation.build.cloud.sap/studio/?action=open&id=eu12.ai-agent-beta-build-default-eu12-ai165.solutionbusinesspartnerinvoicing#/studio/project/2d116da5-5615-4568-bfdc-308fb9c87292/?), especially for the definitions of the Joule Skills. However, we encourage you to try the exercise without it first.
 
