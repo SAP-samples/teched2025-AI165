@@ -44,91 +44,103 @@ Take a look at the Agent Card of the ServiceNow Ticketing Agent, which we'll be 
     - URL to invoke the agent later on
     - mandatory information that the agent needs to create a new ticket in ServiceNow
 
-2. Open a terminal emulator (e.g., PowerShell on Windows) and run the curl command below to instruct the agent to create a ServiceNow ticket.  
+2. Open PowerShell 7 (x64), the terminal emulator  
+  You will be executing the `curl` commands throughout this exercise in PowerShell. Now, run the command below to instruct the agent to create a ServiceNow ticket.  
   Prepare the following:
-    - Replace $A2A_SERVER_URL with the "service" or "invoke" URL from the Agent Card.
-    - Update the message payload to include the mandatory fields for ticket creation: short description and priority.
-    - Set configuration.blocking to true so the request waits for the agent to return the created ticket details.
+    - Set the `A2A_SERVER_URL` environment variable in PowerShell to the service/invoke URL from the Agent Card: `$env:A2A_SERVER_URL = "..."`
+    - Update the sentence in the message payload to include the mandatory fields for ticket creation: short description and priority. Use 2 (high) for the priority. You can **copy the command first to Visual Studio Code** and edit it there.
+    - Notice that configuration.blocking is set to true, so the request waits for the agent to return the created ticket details. It can take a few seconds to get the response.
 
     ```
-    curl --request POST \
-      --url "$A2A_SERVER_URL" \
-      --data '{
-        "jsonrpc": "2.0",
-        "id": 1,
-        "method": "message/send",
-        "params": {
-          "message": {
-            "role": "user",
-            "parts": [
-              {
-                "kind": "text",
-                "text": "Instruct the agent here..."
-              }
-            ],
-            "messageId": "1"
-          },
-          "configuration": {
-            "blocking": true
-          }
+    curl --request POST `
+      --url $env:A2A_SERVER_URL `
+      --header 'Content-Type: application/json' `
+      --data @'
+    {
+      "jsonrpc": "2.0",
+      "id": 1,
+      "method": "message/send",
+      "params": {
+        "message": {
+          "role": "user",
+          "parts": [
+            {
+              "kind": "text",
+              "text": "Instruct the agent here..."
+            }
+          ],
+          "messageId": "1"
+        },
+        "configuration": {
+          "blocking": true
         }
-      }'
+      }
+    }
+    '@
     ```
 
 3. Handle long-running tasks with asynchronous invocation and polling  
   In many real-world cases the agent will perform work that takes more time (validations, external API calls, or multi-step processing). To avoid blocking your client:
-    - Set configuration.blocking back to false so the server returns an immediate acknowledgement.
+    - Notice that configuration.blocking is set back to false, so the server returns an immediate acknowledgement.
     - The acknowledgement typically contains a task identifier (taskId) and a task status you can poll.
     - You can continue other work locally and poll the task status periodically until completion.
 
     Submit a long-running task (non-blocking). We'll simply leave out the short description of the ticket, so that the agent cannot complete the task just yet.
 
     ```
-    curl --request POST \
-      --url "$A2A_SERVER_URL" \
-      --data '{
-        "jsonrpc": "2.0",
-        "id": 1,
-        "method": "message/send",
-        "params": {
-          "message": {
-            "role": "user",
-            "parts": [
-              {
-                "kind": "text",
-                "text": "Create a ticket with priority 2"
-              }
-            ],
-            "messageId": "2"
-          },
-          "configuration": {
-            "blocking": false
-          }
+    curl --request POST `
+      --url $env:A2A_SERVER_URL `
+      --header 'Content-Type: application/json' `
+      --data @'
+    {
+      "jsonrpc": "2.0",
+      "id": 1,
+      "method": "message/send",
+      "params": {
+        "message": {
+          "role": "user",
+          "parts": [
+            {
+              "kind": "text",
+              "text": "Create a ticket with priority 2"
+            }
+          ],
+          "messageId": "2"
+        },
+        "configuration": {
+          "blocking": false
         }
-      }'
+      }
+    }
+    '@
     ```
 
-4. Poll the current status of the task. Make sure to replace `$TASK_ID` with the task id from the previous response.
+4. Poll the current status of the task. Make sure to replace `TASK_ID` with the task id from the previous response.
 
     ```
-    curl --request POST \
-      --url "$A2A_SERVER_URL" \
-      --data '{
-        "jsonrpc": "2.0",
-        "id": 2,
-        "method": "tasks/get",
-        "params": {
-          "id": "'$TASK_ID'"
-        }
-      }'
+    curl --request POST `
+      --url $env:A2A_SERVER_URL `
+      --header 'Content-Type: application/json' `
+      --data @'
+    {
+      "jsonrpc": "2.0",
+      "id": 2,
+      "method": "tasks/get",
+      "params": {
+        "id": "TASK_ID"
+      }
+    }
+    '@
     ```
 
 5. The agent says it requires an additional input, which is of course the short description of the ticket. Provide it and reference again the previous task id. This way the agent knows the request is related to the same task.
 
     ```
-    curl --request POST \
-    --url "$A2A_SERVER_URL" \
-    --data '{
+    curl --request POST `
+      --url $env:A2A_SERVER_URL `
+      --header 'Content-Type: application/json' `
+      --data @'
+    {
       "jsonrpc": "2.0",
       "id": 3,
       "method": "message/send",
@@ -142,10 +154,11 @@ Take a look at the Agent Card of the ServiceNow Ticketing Agent, which we'll be 
             }
           ],
           "messageId": "3",
-          "taskId": "'$TASK_ID'"
+          "taskId": "TASK_ID"
         }
       }
-    }' 
+    }
+    '@
     ```
 
 6. Poll the task status again to know if the ticket was created successfully this time around.
