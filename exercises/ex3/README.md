@@ -10,7 +10,7 @@ In the previous exercise, you learned how to discover and invoke an external age
 > - Practice prompting an agent to actually invoke an external agent for ticket creation
 > - Implement end-to-end agent collaboration workflows
 >
-> **Time Estimate**: Approximately 25 minutes.
+> **Time Estimate**: Approximately 30 minutes.
 
 ## Benefits of Agent Collaboration in Enterprise Scenarios
 
