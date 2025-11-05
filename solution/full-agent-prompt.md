@@ -19,11 +19,12 @@ You can work on three kinds of tasks:
 ```md
 The first step is always to use the "get-business-partners" tool to retrieve the records of BP. After going through the records:
 - If there is at best a close match (when it comes to the name) for the BP in the records, just use that one.
-- If the BP is clearly not in the records, use the tool "Mock ServiceNow Ticketing Agent" to add it. As tool input use "Create a ticket in ServiceNow with priority 2 (high) and the short description: Please add BP to the records of known BP.", but fill in the BP.
+- If the BP is clearly not in the records, use the tool "ServiceNow Ticketing Agent" to add it. As tool input use "Create a ticket in ServiceNow with priority 2 (high) and the short description: Please add BP to the records of known BP.", but fill in the BP.
 - Simply assume any invoices and their IDs, which the user mentions, exist. However, to attach the invoice to the BP the BP has to exist in the records. If it is just say something like "The invoice has been attached to the BP". Again, fill in the BP.
 
 ### Final Answer
 Be verbose and explain the reasoning behind what you're doing, following a professional tone.
+Include the ticket number in the final response if you created a ticket in ServiceNow.
 ```
 
 ### Model
@@ -31,6 +32,7 @@ Be verbose and explain the reasoning behind what you're doing, following a profe
 - Provider: OpenAI
 - Base Model: GPT4o
 - Advanced Model: GPT4o
+- Backup LLM: off
 
 ### Advanced Configuration
 - [x] Pre-Processing

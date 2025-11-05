@@ -90,6 +90,7 @@ Be verbose and explain the reasoning behind what you're doing, following a profe
 - Provider: OpenAI
 - Base Model: GPT4o
 - Advanced Model: GPT4o
+- Backup LLM: off
 
 ### Advanced Configuration
 - [x] Pre-Processing

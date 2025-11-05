@@ -34,7 +34,7 @@ You can always jump to the solution [here](../../solution/full-agent-prompt.md) 
    - Name it Business Partner Invoicing Agent, leave the identifier unchanged and use the following as description: "An AI Agent working with records about business partners."
    - After creation, copy the initial prompt and settings from the [template](./agent-template.md) over to your agent to get started.
    - **Add one sentence** at the start of the Additional Context section of the agent prompt. It should instruct the agent to always go through the records of known business partners below in the prompt first.
-   - The agent needs to have at least one tool to test it in the next step. Click Add Tool and simply add the Calculator for now. 
+   - The agent needs to have at least one tool to test it in the next step. Click Add Tool and simply add the Calculator for now. Name it "Calculator" and give it the following description: "Calculator to do math".
    - <details><summary>Sentence Solution</summary>"The first step is to always go through the records of known BP below."</details>
 
 5. Test the agent
@@ -51,7 +51,7 @@ You can always jump to the solution [here](../../solution/full-agent-prompt.md) 
    - Turn off "Allow skill to be started directly by a user"
    - Click the plus button under the Start node and select Call Action. Then select the action "Invoke function getBusinessPartners" to add it as a new step/node.
    - Select the added node for the action and create a new Destination Variable in the menu to the right. Name it BUSINESS_PARTNERS_SERVICE
-   - **Define a Skill Output** named businessPartners in the Start node. As type set the `get_getGetBusinessPartners_200_output_schema`.
+   - **Define a Skill Output** named businessPartners in the Start node. As type set the `get_getGetBusinessPartners_200_output_schema` and use the following as description: "the known business partners".
    - **Set the value of the Skill Output** in the End node to the result of the previous "Invoke function getBusinessPartners" step.
    - Check for any errors in the Design Console to the bottom of the page
    - **If you get stuck**, you can simply replicate the same Skill from [here](https://ai-agent-beta-build-default-eu12-ai165.canary-eu12.process-automation.build.cloud.sap/studio/?action=open&id=eu12.ai-agent-beta-build-default-eu12-ai165.solutionbusinesspartnerinvoicing#/studio/project/2d116da5-5615-4568-bfdc-308fb9c87292) 
