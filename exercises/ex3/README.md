@@ -21,35 +21,34 @@ The integration showcases practical enterprise automation where discovery, valid
 ## Exercise Steps
 
 1. Inspect the A2A Router Service  
-   Navigate to the Action Project called "A2A Router Service" in Joule Studio. Review the following components:
+   Navigate to Actions (in the menu to the left under Connectors) in Joule Studio and click on the item "A2A Router Service". Review the following components of the shown action `Invoke action triggerA2A`:
    - The inputs and outputs of the action
    - The underlying [code](../../business-partner-invoicing/srv/a2a-router.ts) of the `triggerA2A` endpoint that is called. Notice how it's invoking the same ServiceNow Ticketing Agent from exercise 2.
-   - Test the action with one of the messages that you used with `curl` in exercise 2. Make sure to select the right destination under Connectivity -> Destination.
+   - To test the action, select the Test tab, select the destination `A2A_ROUTER_SERVICE` under Connectivity -> Destination, and enter one of the messages that you used with `curl` in exercise 2 as the value for the `task` input. Then click the Test button to the right. It takes a few seconds to get the response.
 
 2. Wrap the `triggerA2A` action in a new Joule Skill
-   In your own project, create a new Joule Skill and name it "ServiceNow Ticketing Agent".
+   Navigate back to the Lobby (in the menu to the left) and click again on your own project. Therein, create a new Joule Skill and name it "ServiceNow Ticketing Agent". This Skill will act as the integration between the Business Partner Invoicing Agent and the ServiceNow Ticketing Agent via the A2A protocol.
    - As description use: "A skill to talk to the ServiceNow Ticketing Agent, which can create tickets in ServiceNow."
    - Again turn off "Allow skill to be started directly by a user".
-   - Add a new step that invokes the action.
-   - Configure the inputs and outputs of the skill accordingly.
+   - Add a new step/node after the Start node that invokes the `triggerA2A` action.
+   - Configure the inputs and outputs of the skill accordingly:
+      - Define a Skill Input `task`, check the "Required" box and give it the description: "the task for the agent"
+      - Define two Skill Outputs called `taskId` and `agentResponse` with the descriptions "id of the task" and "the agent response". Check the "Required" box for both outputs.
+      - Bind the Skill Outputs accordingly to the outputs of the previous step/node, which invokes the `triggerA2A` action.
+      - Don't forget to click on the Save button.
 
 3. Attach the Joule Skill to enable agent collaboration
    Attach the Skill, which you created in the previous step, as a tool to the existing Business Partner Invoicing Agent
    - Add "Create tickets in ServiceNow to add a new BP to the records." to the Instructions section of the agent prompt.
    - Describe in the Additional Context section when the tool should be invoked and its input.
    - Hint: Make sure the input includes the priority 2 (high) and a short description for the ticket.
+   - Again, feel free to check the full solution [here](../../solution/full-agent-prompt.md).
 
 4. Test the agent collaboration end to end  
    Click again the Test button to deploy a test package. Then prompt the agent accordingly to trigger the creation of a new ticket:
    - Ask it to provide you with information on a business partner that is clearly not in the records of known business partners.
    - Verify in the (timeline) logs that there is a step about creating the ticket.
    - Find again the raw response from the agent, so not from Joule, in the logs.
-
-5. Deploy and test in production environment  
-   Release and deploy your project to make it available in the production environment. Complete the following steps:
-   - Navigate to Control Tower → Environment → Joule
-   - Launch Joule for comprehensive end-to-end testing in production
-   - Validate the complete agent collaboration workflow one more time
 
 ## Expected Outcome
 
