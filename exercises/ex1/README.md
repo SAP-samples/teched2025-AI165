@@ -9,12 +9,12 @@
 >
 > **Time Estimate**: Approximately 40 minutes.
 
-You can always jump to the solution [here](../../solution/full-agent-prompt.md) for a possible, full agent prompt or in Joule Studio [here](https://ai-agent-beta-build-default-eu12-ai165.canary-eu12.process-automation.build.cloud.sap/studio/?action=open&id=eu12.ai-agent-beta-build-default-eu12-ai165.solutionbusinesspartnerinvoicing#/studio/project/2d116da5-5615-4568-bfdc-308fb9c87292/?), especially for the definitions of the Joule Skills. However, we encourage you to try the exercise without it first.
+You can always jump to the solution [here](../../solution/full-agent-prompt.md) for a possible, full agent prompt or in Joule Studio [here](), especially for the definitions of the Joule Skills. However, we encourage you to try the exercise without it first.
 
 ## Exercise Steps
 
 1. Log in to Joule Studio
-   - Navigate to [Joule Studio](https://ai-agent-beta-build-default-eu12-ai165.eu12.build.cloud.sap/lobby).
+   - Navigate to [Joule Studio]().
    - Log in with the username T-AI165-XXX@education.cloud.sap where XXX is your workstation's printed number, for example 002, 018 and 038.
    - Use the password that was provided to you before.
    - Select the identity provider containing "ondemand.com" in its name.
@@ -54,7 +54,7 @@ You can always jump to the solution [here](../../solution/full-agent-prompt.md) 
    - **Define a Skill Output** named businessPartners in the Start node. As type set the `get_getGetBusinessPartners_200_output_schema` and use the following as description: "the known business partners".
    - **Set the value of the Skill Output** in the End node to the result of the previous "Invoke function getBusinessPartners" step.
    - Check for any errors in the Design Console to the bottom of the page
-   - **If you get stuck**, you can simply replicate the same Skill from [here](https://ai-agent-beta-build-default-eu12-ai165.canary-eu12.process-automation.build.cloud.sap/studio/?action=open&id=eu12.ai-agent-beta-build-default-eu12-ai165.solutionbusinesspartnerinvoicing#/studio/project/2d116da5-5615-4568-bfdc-308fb9c87292) 
+   - **If you get stuck**, you can simply replicate the same Skill from [here]()
 
 7. Add Joule Skill as tool to agent
    - Go back to the definition of your Business Partner Invoicing Agent. Click the Add Tool button near the bottom of the page, select Joule Skill and select the `get-business-partners` Skill to add it as a tool to the agent.
